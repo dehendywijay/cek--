@@ -4,9 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, Home } from "lucide-react";
 import { MenuItem } from "@/type/type";
+import { Button } from "@/components/ui/button";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 const menuItems: MenuItem[] = [
-  { label: "PROFIL SEKOLAH", href: "/profil" },
+  { label: "PROFIL SEKOLAH",
+     children: [
+       { label: "Sejarah", href: "/profil/sejarah" },
+       { label: "Visi dan Misi", href: "/profil/visi-misi" },
+       { label: "Struktur Organisasi", href: "/profil/struktur-organisasi" },
+     ]
+    ,href: "/profil" },
   { label: "AKADEMIK", href: "/akademik" },
   { label: "KESISWAAN DAN HUMAS", href: "/kesiswaan" },
   { label: "SARANA PRASARANA", href: "/sarana" },
@@ -36,7 +45,7 @@ const menuItems: MenuItem[] = [
 
 export default function Navbar() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+  const router = useRouter();
   return (
     <nav className="bg-gray-900 text-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center px-4 py-3 gap-6">
@@ -93,6 +102,24 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
+       {/* <Button
+          type="button"
+          variant="ghost"
+          className="flex items-center gap-2 px-3 py-2 h-10 shadow-sm hover:shadow-md hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all duration-200 border border-emerald-100 hover:border-emerald-200"
+          aria-label="Profil Pengguna"
+          onClick={() => router.push("/user/setting")}
+        >
+          
+          <div className="hidden md:flex flex-col items-start text-left leading-tight">
+            <span className="text-sm font-semibold text-gray-900 truncate max-w-[120px]">
+              Halo, User
+            </span>
+            <span className="text-xs text-emerald-600 font-medium">Kelola</span>
+          </div>
+          <svg className="h-4 w-4 ml-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </Button> */}
     </nav>
   );
 }
