@@ -3,12 +3,12 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import CountUp from "react-countup";
-import Footer from "@/lib/footer";
+import Footer from "@/components/footer";
 import NewsSection from "@/components/NewSection";
 export default function Home() {
   const [emblaRef] = useEmblaCarousel()
   return (
-    <main>
+    <main className="">
       <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             <div className="embla__slide relative">

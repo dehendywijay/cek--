@@ -4,7 +4,7 @@
 import NewsCard from "@/components/ NewsCard";
 import NewsSection from "@/components/NewSection";
 import Sidebar from "@/components/SideNews";
-import Footer from "@/lib/footer";
+import Footer from "@/components/footer";
 import { News } from "@/type/type";
 import axios from "axios";
 import Image from "next/image";
@@ -31,8 +31,8 @@ export default function Home({ params }: { params: Promise<{ slug: string }> }) 
   }, [])
     return(
         <main >
-            <section className="flex flex-col md:flex-row items-center md:items-start gap-20 max-w-6xl mx-auto p-6 mt-20">  
-                <div className=" text-gray-700">
+            <section className="grid grid-cols-1 md:grid-cols-4 gap-20 max-w-6xl mx-auto p-6 mt-20">  
+                <div className=" text-gray-700 col-span-3">
                     <h2 className="text-black font-bold text-xl md:text-2xl mb-2">
                           {news?.title}
                     </h2>

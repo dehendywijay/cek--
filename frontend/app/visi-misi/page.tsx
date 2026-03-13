@@ -1,5 +1,5 @@
 import Sidebar from "@/components/SideNews";
-import Footer from "@/lib/footer";
+import Footer from "@/components/footer";
 import Image from "next/image";
 
 

@@ -13,3 +13,4 @@ export type News = {
   createdAt: Date;
   updatedAt: Date;
 };
+

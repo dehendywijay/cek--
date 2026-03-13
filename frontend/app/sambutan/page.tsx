@@ -1,13 +1,13 @@
 import Sidebar from "@/components/SideNews";
-import Footer from "@/lib/footer";
+import Footer from "@/components/footer";
 import Image from "next/image";
 
 
 export default function Home(){
     return(
         <main >
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-20 max-w-1xl mx-auto p-6 mt-10">
-            <section className=" gap-10 max-w-6xl mx-auto p-6 "> 
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-20 max-w-6xl mx-auto p-6 mt-20">          
+            <section className="col-span-3 gap-10 max-w-6xl mx-auto p-6 "> 
                 <div className="relative w-64 h-64 shrink-0 ">
                         <div className="absolute inset-0 rounded-full border-8 border-red-800"></div>
                         <Image
@@ -46,8 +46,7 @@ export default function Home(){
                       </div>
                      
             </section>
-            <div className="pr-44">
-
+            <div className="">
             <Sidebar/>
             </div>
             
